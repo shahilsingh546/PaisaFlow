@@ -31,7 +31,6 @@ async function getP2PTransactions() {
       toUser: true,
     },
   });
-
   return txns.map((t: (typeof txns)[number]) => ({
     id: t.id,
     time: t.timestamp,
@@ -46,7 +45,6 @@ async function getP2PTransactions() {
 
 export default async function () {
   const transactions = await getP2PTransactions();
-
   return (
     <div className="w-screen">
       <div className="text-4xl text-[#6a51a6] pt-8 mb-8 font-bold">
