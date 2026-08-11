@@ -1,0 +1,34 @@
+name: Build Pipeline
+
+# Trigger the pipeline after every push to the main branch
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-project:
+    # Use a fresh Ubuntu environment provided by GitHub
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Fetch code from your repository
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up the programming environment
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Step 3: Install project dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # Step 4: Prisma Generate
+      - name: Run Prisma
+        run: npm Prisma Generate
+
+      # Step 5: Compile / Build the application
+      - name: Build Application
+        run: npm run build
