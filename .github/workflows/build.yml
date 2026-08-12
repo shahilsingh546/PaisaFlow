@@ -27,7 +27,7 @@ jobs:
 
       # Step 4: Prisma Generate
       - name: Run Prisma
-        run: npm Prisma Generate
+        run: npx Prisma Generate
 
       # Step 5: Compile / Build the application
       - name: Build Application
