@@ -16,5 +16,4 @@ RUN npm run db:generate
 
 RUN npm run build
 
-
-CMD ["npm", "--prefix", "apps/user-app", "run", "start", "--", "--hostname", "0.0.0.0"]
+CMD ["npm", "run", "start-user-app"]

@@ -35,24 +35,24 @@ npm run build
 
 ## Docker
 
-A root `Dockerfile` is included for building and running one app from the workspace.
+A root `Dockerfile` is included for building the full workspace.
 
-Build the default app (`apps/user-app`):
+Build all apps and packages:
 
 ```sh
-docker build -t paisaflow-app .
+docker build -t paisa-flow .
 ```
 
-Build the merchant app instead:
+Run the container. By default, this starts `apps/user-app`:
 
 ```sh
-docker build --build-arg APP=apps/merchant-app -t paisaflow-app .
+docker build --build-arg APP=apps/merchant-app -t paisa-flow .
 ```
 
 Run the container:
 
 ```sh
-docker run -p 3000:3000 paisaflow-app
+docker run -p 3000:3000 paisa-flow
 ```
 
 ## Notes
