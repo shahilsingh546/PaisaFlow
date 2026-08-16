@@ -40,19 +40,19 @@ A root `Dockerfile` is included for building and running one app from the worksp
 Build the default app (`apps/user-app`):
 
 ```sh
-docker build -t paisa-flow .
+docker build -t paisaflow-app .
 ```
 
 Build the merchant app instead:
 
 ```sh
-docker build --build-arg APP=apps/merchant-app -t paisa-flow .
+docker build --build-arg APP=apps/merchant-app -t paisaflow-app .
 ```
 
 Run the container:
 
 ```sh
-docker run -p 3000:3000 paisa-flow
+docker run -p 3000:3000 paisaflow-app
 ```
 
 ## Notes
