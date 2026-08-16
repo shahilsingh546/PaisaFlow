@@ -27,4 +27,4 @@ jobs:
         tags: singhisme456/paisaflow-app:latest  
 
     - name: Verify Pushed Image
-      run: docker pull 1singhisme456/paisaflow-app:latest 
+      run: docker pull singhisme456/paisaflow-app:latest 
