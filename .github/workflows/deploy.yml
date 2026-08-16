@@ -39,4 +39,10 @@ jobs:
           sudo docker pull singhisme456/paisaflow-app:latest
           sudo docker stop paisaflow-app || true
           sudo docker rm paisaflow-app || true
-          sudo docker run -d --name paisaflow-app -p 3005:3000 singhisme456/paisaflow-app:latest
+          sudo docker run -d \
+            --name paisaflow-app \
+            -p 3005:3000 \
+            -e DATABASE_URL="${{ secrets.DATABASE_URL }}" \
+            -e NEXTAUTH_URL="${{ secrets.NEXTAUTH_URL }}" \
+            -e NEXTAUTH_SECRET="${{ secrets.NEXTAUTH_SECRET }}" \
+            singhisme456/paisaflow-app:latest
